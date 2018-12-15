@@ -1,0 +1,21 @@
+declare const _default: ({ subMenuLabelActive, subMenuLabelNormal, subMenuRangeTitle, submenuPartitionVertical, submenuPartitionHorizontal, submenuCheckbox, submenuRangePointer, submenuRangeValue, submenuColorpickerTitle, submenuColorpickerButton, submenuRangeBar, submenuRangeSubbar, submenuDisabledRangePointer, submenuDisabledRangeBar, submenuDisabledRangeSubbar, submenuIconSize, menuIconSize, biSize }: {
+    subMenuLabelActive: any;
+    subMenuLabelNormal: any;
+    subMenuRangeTitle: any;
+    submenuPartitionVertical: any;
+    submenuPartitionHorizontal: any;
+    submenuCheckbox: any;
+    submenuRangePointer: any;
+    submenuRangeValue: any;
+    submenuColorpickerTitle: any;
+    submenuColorpickerButton: any;
+    submenuRangeBar: any;
+    submenuRangeSubbar: any;
+    submenuDisabledRangePointer: any;
+    submenuDisabledRangeBar: any;
+    submenuDisabledRangeSubbar: any;
+    submenuIconSize: any;
+    menuIconSize: any;
+    biSize: any;
+}) => string;
+export default _default;
