@@ -5,12 +5,12 @@
 import snippet from 'tui-code-snippet';
 import Promise from 'core-js/library/es6/promise';
 import Invoker from './invoker';
-import UI from './ui';
-import action from './action';
-import commandFactory from './factory/command';
-import Graphics from './graphics';
-import * as consts from './consts';
-import {sendHostName} from './util';
+import UI from "./ui";
+import action from "./action";
+import commandFactory from "./factory/command";
+import Graphics from "./graphics";
+import * as consts from "./consts";
+import {sendHostName} from "./util";
 
 const events = consts.eventNames;
 const commands = consts.commandNames;
@@ -229,8 +229,8 @@ class ImageEditor {
         }
 
         if (applyGroupSelectionStyle) {
-            this.on('selectionCreated', eventTarget => {
-                if (eventTarget.type === 'group') {
+            this.on("selectionCreated", eventTarget => {
+                if (eventTarget.type === "group") {
                     eventTarget.set(selectionStyle);
                 }
             });
@@ -275,19 +275,19 @@ class ImageEditor {
      */
     _attachGraphicsEvents() {
         this._graphics.on({
-            'mousedown': this._handlers.mousedown,
-            'objectMoved': this._handlers.objectMoved,
-            'objectScaled': this._handlers.objectScaled,
-            'objectActivated': this._handlers.objectActivated,
-            'addText': this._handlers.addText,
-            'addObject': this._handlers.addObject,
-            'textEditing': this._handlers.textEditing,
-            'textChanged': this._handlers.textChanged,
-            'iconCreateResize': this._handlers.iconCreateResize,
-            'iconCreateEnd': this._handlers.iconCreateEnd,
-            'selectionCleared': this._handlers.selectionCleared,
-            'selectionCreated': this._handlers.selectionCreated,
-            'addObjectAfter': this._handlers.addObjectAfter
+            "mousedown": this._handlers.mousedown,
+            "objectMoved": this._handlers.objectMoved,
+            "objectScaled": this._handlers.objectScaled,
+            "objectActivated": this._handlers.objectActivated,
+            "addText": this._handlers.addText,
+            "addObject": this._handlers.addObject,
+            "textEditing": this._handlers.textEditing,
+            "textChanged": this._handlers.textChanged,
+            "iconCreateResize": this._handlers.iconCreateResize,
+            "iconCreateEnd": this._handlers.iconCreateEnd,
+            "selectionCleared": this._handlers.selectionCleared,
+            "selectionCreated": this._handlers.selectionCreated,
+            "addObjectAfter": this._handlers.addObjectAfter
         });
     }
 
@@ -297,7 +297,7 @@ class ImageEditor {
      */
     _attachDomEvents() {
         // ImageEditor supports IE 9 higher
-        document.addEventListener('keydown', this._handlers.keydown);
+        document.addEventListener("keydown", this._handlers.keydown);
     }
 
     /**
@@ -306,7 +306,7 @@ class ImageEditor {
      */
     _detachDomEvents() {
         // ImageEditor supports IE 9 higher
-        document.removeEventListener('keydown', this._handlers.keydown);
+        document.removeEventListener("keydown", this._handlers.keydown);
     }
 
     /**
@@ -322,12 +322,12 @@ class ImageEditor {
 
         if ((e.ctrlKey || e.metaKey) && e.keyCode === keyCodes.Z) {
             // There is no error message on shortcut when it's empty
-            this.undo()['catch'](() => {});
+            this.undo()["catch"](() => {});
         }
 
         if ((e.ctrlKey || e.metaKey) && e.keyCode === keyCodes.Y) {
             // There is no error message on shortcut when it's empty
-            this.redo()['catch'](() => {});
+            this.redo()["catch"](() => {});
         }
 
         if (((e.keyCode === keyCodes.BACKSPACE || e.keyCode === keyCodes.DEL) && existRemoveObject)) {
@@ -713,7 +713,7 @@ class ImageEditor {
      * });
      */
     flipX() {
-        return this._flip('flipX');
+        return this._flip("flipX");
     }
 
     /**
@@ -729,7 +729,7 @@ class ImageEditor {
      * });
      */
     flipY() {
-        return this._flip('flipY');
+        return this._flip("flipY");
     }
 
     /**
@@ -745,7 +745,7 @@ class ImageEditor {
      * });;
      */
     resetFlip() {
-        return this._flip('reset');
+        return this._flip("reset");
     }
 
     /**
@@ -775,7 +775,7 @@ class ImageEditor {
      * });
      */
     rotate(angle) {
-        return this._rotate('rotate', angle);
+        return this._rotate("rotate", angle);
     }
 
     /**
@@ -795,7 +795,7 @@ class ImageEditor {
      * });
      */
     setAngle(angle) {
-        return this._rotate('setAngle', angle);
+        return this._rotate("setAngle", angle);
     }
 
     /**
@@ -975,7 +975,7 @@ class ImageEditor {
      * });
      */
     addText(text, options) {
-        text = text || '';
+        text = text || "";
         options = options || {};
 
         return this.execute(commands.ADD_TEXT, text, options);
@@ -990,7 +990,7 @@ class ImageEditor {
      * imageEditor.changeText(id, 'change text');
      */
     changeText(id, text) {
-        text = text || '';
+        text = text || "";
 
         return this.execute(commands.CHANGE_TEXT, id, text);
     }
@@ -1022,7 +1022,7 @@ class ImageEditor {
      * @private
      */
     _changeActivateMode(type) {
-        if (type !== 'ICON' && this.getDrawingMode() !== type) {
+        if (type !== "ICON" && this.getDrawingMode() !== type) {
             this.startDrawingMode(type);
         }
     }
@@ -1447,6 +1447,14 @@ class ImageEditor {
         return this._graphics.getCanvasSize();
     }
 
+    /**
+     * Get all objects
+     * @returns {Array} Objects 
+     * @example
+     */
+    getObjects() {
+        return this._graphics.getObjects();
+    }
     /**
      * Get object position by originX, originY
      * @param {number} id - object id
