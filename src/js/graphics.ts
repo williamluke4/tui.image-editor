@@ -168,6 +168,8 @@ class Graphics {
             onObjectRemoved: this._onObjectRemoved.bind(this),
             onObjectMoved: this._onObjectMoved.bind(this),
             onObjectScaled: this._onObjectScaled.bind(this),
+            onObjectRotated: this._onObjectRotated.bind(this),
+            onObjectModifyed: this._onObjectModifyed.bind(this),
             onObjectSelected: this._onObjectSelected.bind(this),
             onPathCreated: this._onPathCreated.bind(this),
             onSelectionCleared: this._onSelectionCleared.bind(this),
@@ -925,6 +927,8 @@ class Graphics {
             "object:removed": handler.onObjectRemoved,
             "object:moving": handler.onObjectMoved,
             "object:scaling": handler.onObjectScaled,
+            "object:rotated": handler.onObjectRotated,
+            "object:modified": handler.onObjectModifyed,
             "object:selected": handler.onObjectSelected,
             "path:created": handler.onPathCreated,
             "selection:cleared": handler.onSelectionCleared,
@@ -979,6 +983,29 @@ class Graphics {
         this.fire(events.OBJECT_MOVED, params);
     }
 
+    /**
+     * "object:rotated" canvas event handler
+     * @param {{target: fabric.Object, e: MouseEvent}} fEvent - Fabric event
+     * @private
+     */
+    _onObjectRotated(fEvent) {
+        const {target} = fEvent;
+        const params = this.createObjectProperties(target);
+
+        this.fire(events.OBJECT_ROTATED, params);
+    }
+
+    /**
+     * "object:modifyed" canvas event handler
+     * @param {{target: fabric.Object, e: MouseEvent}} fEvent - Fabric event
+     * @private
+     */
+    _onObjectModifyed(fEvent) {
+        const {target} = fEvent;
+        const params = this.createObjectProperties(target);
+
+        this.fire(events.OBJECT_MODIFYED, params);
+    }
     /**
      * "object:scaling" canvas event handler
      * @param {{target: fabric.Object, e: MouseEvent}} fEvent - Fabric event

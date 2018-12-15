@@ -279,6 +279,8 @@ class ImageEditor {
             "objectMoved": this._handlers.objectMoved,
             "objectScaled": this._handlers.objectScaled,
             "objectActivated": this._handlers.objectActivated,
+            "objectRotated": this._handlers.objectRotated,
+            "objectModifyed": this._handlers.objectModifyed,
             "addText": this._handlers.addText,
             "addObject": this._handlers.addObject,
             "textEditing": this._handlers.textEditing,
@@ -470,7 +472,32 @@ class ImageEditor {
          */
         this.fire(events.OBJECT_SCALED, props);
     }
-
+    _onObjectRotated(props) {
+        /**
+         * The event when scale factor is changed
+         * @event ImageEditor#objectRotated
+         * @param {ObjectProps} props - object properties
+         * @example
+         * imageEditor.on('objectRotated', function(props) {
+         *     console.log(props);
+         *     console.log(props.type);
+         * });
+         */
+        this.fire(events.OBJECT_ROTATED, props);
+    }
+    _onObjectModifyed(props) {
+        /**
+         * The event when scale factor is changed
+         * @event ImageEditor#objectModifyed
+         * @param {ObjectProps} props - object properties
+         * @example
+         * imageEditor.on('objectModifyed', function(props) {
+         *     console.log(props);
+         *     console.log(props.type);
+         * });
+         */
+        this.fire(events.OBJECT_MODIFYED, props);
+    }
     /**
      * Get current drawing mode
      * @returns {string}

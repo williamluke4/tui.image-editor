@@ -57,6 +57,8 @@ export const eventNames: { [s: string]: string; } = {
     OBJECT_MOVED: "objectMoved",
     OBJECT_SCALED: "objectScaled",
     OBJECT_CREATED: "objectCreated",
+    OBJECT_ROTATED: "objectRotated",
+    OBJECT_MODIFYED: "objectModifyed",
     TEXT_EDITING: "textEditing",
     TEXT_CHANGED: "textChanged",
     ICON_CREATE_RESIZE: "iconCreateResize",
