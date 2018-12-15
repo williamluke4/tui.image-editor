@@ -52,7 +52,7 @@ export const commandNames: { [s: string]: string; } = {
  * Event names
  * @type {Object.<string, string>}
  */
-export const eventNames: {
+export const eventNames: { [s: string]: string; } = {
     OBJECT_ACTIVATED: "objectActivated",
     OBJECT_MOVED: "objectMoved",
     OBJECT_SCALED: "objectScaled",

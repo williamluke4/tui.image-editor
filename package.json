@@ -1,13 +1,14 @@
 {
-  "name": "tui-image-editor",
+  "name": "tsui-image-editor",
   "author": "NHNEnt FE Development Lab <dl_javascript@nhnent.com>",
-  "version": "3.3.0",
+  "version": "3.4.0",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/nhnent/tui.image-editor.git"
   },
   "main": "dist/tui-image-editor.js",
+  "types": "types/types.d.ts",
   "description": "TOAST UI Component: ImageEditor",
   "keywords": [
     "nhnent",
@@ -66,7 +67,7 @@
     "test": "karma start --no-single-run",
     "test:ne": "KARMA_SERVER=ne karma start",
     "bundle": "webpack && webpack -p && npm run bundle:svg",
-    "bundle:svg": "mkdir -p dist/svg && node makesvg.js",
+    "bundle:svg": "node makesvg.js",
     "serve": "webpack-dev-server --inline --hot -d",
     "cpy-dist2doc": "mkdir -p doc/dist && cp -f -r dist doc",
     "doc": "jsdoc -c jsdoc.conf.json && npm run cpy-dist2doc",
