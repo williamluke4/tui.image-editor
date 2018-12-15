@@ -1,5 +1,5 @@
 import snippet from 'tui-code-snippet';
-import util from './util';
+import * as util from './util';
 import mainContainer from './ui/template/mainContainer';
 import controls from './ui/template/controls';
 

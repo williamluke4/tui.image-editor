@@ -6,7 +6,7 @@ import fabric from 'fabric/dist/fabric.require';
 import snippet from 'tui-code-snippet';
 import Promise from 'core-js/library/es6/promise';
 import Component from '../interface/component';
-import consts from '../consts';
+import * as consts from '../consts';
 
 const events = consts.eventNames;
 const {rejectMessages} = consts;
@@ -158,4 +158,4 @@ class Icon extends Component {
     }
 }
 
-module.exports = Icon;
+export default Icon;

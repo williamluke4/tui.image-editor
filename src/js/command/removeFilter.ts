@@ -3,7 +3,7 @@
  * @fileoverview Remove a filter from an image
  */
 import commandFactory from '../factory/command';
-import consts from '../consts';
+import * as consts from '../consts';
 
 const {componentNames, commandNames} = consts;
 const {FILTER} = componentNames;
@@ -39,4 +39,4 @@ const command = {
 
 commandFactory.register(command);
 
-module.exports = command;
+export default command;

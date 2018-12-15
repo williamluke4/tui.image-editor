@@ -5,7 +5,7 @@
 import fabric from 'fabric/dist/fabric.require';
 import Promise from 'core-js/library/es6/promise';
 import Component from '../interface/component';
-import consts from '../consts';
+import * as consts from '../consts';
 
 const {componentNames} = consts;
 
@@ -95,4 +95,4 @@ class Rotation extends Component {
     }
 }
 
-module.exports = Rotation;
+export default Rotation;

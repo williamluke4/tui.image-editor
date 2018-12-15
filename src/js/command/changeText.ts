@@ -4,7 +4,7 @@
  */
 import commandFactory from '../factory/command';
 import Promise from 'core-js/library/es6/promise';
-import consts from '../consts';
+import * as consts from '../consts';
 
 const {componentNames, rejectMessages, commandNames} = consts;
 const {TEXT} = componentNames;
@@ -46,4 +46,4 @@ const command = {
 
 commandFactory.register(command);
 
-module.exports = command;
+export default command;

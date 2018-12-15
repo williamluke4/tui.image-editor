@@ -4,7 +4,7 @@
  */
 import Promise from 'core-js/library/es6/promise';
 import Component from '../interface/component';
-import consts from '../consts';
+import * as consts from '../consts';
 
 const {componentNames, rejectMessages} = consts;
 const imageOption = {
@@ -82,4 +82,4 @@ class ImageLoader extends Component {
     }
 }
 
-module.exports = ImageLoader;
+export default ImageLoader;

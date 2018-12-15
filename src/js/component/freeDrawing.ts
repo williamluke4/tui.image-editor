@@ -4,7 +4,7 @@
  */
 import fabric from 'fabric/dist/fabric.require';
 import Component from '../interface/component';
-import consts from '../consts';
+import * as consts from '../consts';
 
 /**
  * FreeDrawing
@@ -70,4 +70,4 @@ class FreeDrawing extends Component {
     }
 }
 
-module.exports = FreeDrawing;
+export default FreeDrawing;

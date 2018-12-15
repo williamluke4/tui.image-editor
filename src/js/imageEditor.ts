@@ -9,7 +9,7 @@ import UI from './ui';
 import action from './action';
 import commandFactory from './factory/command';
 import Graphics from './graphics';
-import consts from './consts';
+import * as consts from './consts';
 import {sendHostName} from './util';
 
 const events = consts.eventNames;
@@ -1514,4 +1514,4 @@ class ImageEditor {
 action.mixin(ImageEditor);
 CustomEvents.mixin(ImageEditor);
 
-module.exports = ImageEditor;
+export default ImageEditor;

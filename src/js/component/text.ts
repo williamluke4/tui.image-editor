@@ -6,8 +6,8 @@ import fabric from 'fabric/dist/fabric.require';
 import snippet from 'tui-code-snippet';
 import Promise from 'core-js/library/es6/promise';
 import Component from '../interface/component';
-import consts from '../consts';
-import util from '../util';
+import * as consts from '../consts';
+import * as util from  '../util';
 
 const events = consts.eventNames;
 
@@ -664,4 +664,4 @@ class Text extends Component {
     }
 }
 
-module.exports = Text;
+export default Text;

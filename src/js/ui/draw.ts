@@ -1,4 +1,4 @@
-import util from '../util';
+import * as util from  '../util';
 import Colorpicker from './tools/colorpicker';
 import Range from './tools/range';
 import Submenu from './submenuBase';

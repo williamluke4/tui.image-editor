@@ -5,7 +5,7 @@
 import fabric from 'fabric/dist/fabric.require';
 import Promise from 'core-js/library/es6/promise';
 import Component from '../interface/component';
-import consts from '../consts';
+import * as consts from '../consts';
 import resizeHelper from '../helper/shapeResizeHelper';
 import {extend, inArray} from 'tui-code-snippet';
 
@@ -417,4 +417,4 @@ class Shape extends Component {
     }
 }
 
-module.exports = Shape;
+export default Shape;

@@ -4,7 +4,7 @@
  */
 import fabric from 'fabric/dist/fabric.require';
 import Component from '../interface/component';
-import consts from '../consts';
+import * as consts from '../consts';
 
 const {eventNames} = consts;
 
@@ -173,4 +173,4 @@ class Line extends Component {
     }
 }
 
-module.exports = Line;
+export default Line;

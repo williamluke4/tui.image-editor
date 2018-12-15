@@ -5,7 +5,7 @@
 import snippet from 'tui-code-snippet';
 import Promise from 'core-js/library/es6/promise';
 import Component from '../interface/component';
-import consts from '../consts';
+import * as consts from '../consts';
 
 const {componentNames, rejectMessages} = consts;
 
@@ -148,4 +148,4 @@ class Flip extends Component {
     }
 }
 
-module.exports = Flip;
+export default Flip;

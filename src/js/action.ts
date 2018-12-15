@@ -1,5 +1,5 @@
 import {extend} from 'tui-code-snippet';
-import util from './util';
+import * as util from './util';
 import Imagetracer from './helper/imagetracer';
 
 export default {

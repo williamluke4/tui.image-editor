@@ -7,7 +7,7 @@ import Promise from 'core-js/library/es6/promise';
 import fabric from 'fabric/dist/fabric.require';
 import Component from '../interface/component';
 import Mask from '../extension/mask';
-import consts from '../consts';
+import * as consts from '../consts';
 import Blur from '../extension/blur';
 import Sharpen from '../extension/sharpen';
 import Emboss from '../extension/emboss';
@@ -226,4 +226,4 @@ class Filter extends Component {
     }
 }
 
-module.exports = Filter;
+export default Filter;

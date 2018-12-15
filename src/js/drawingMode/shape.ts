@@ -2,8 +2,8 @@
  * @author NHN Ent. FE Development Team <dl_javascript@nhnent.com>
  * @fileoverview ShapeDrawingMode class
  */
-import DrawingMode from '../interface/drawingMode';
-import consts from '../consts';
+import DrawingMode from "../interface/drawingMode";
+import * as consts from "../consts";
 
 const {drawingModes} = consts;
 const components = consts.componentNames;
@@ -39,4 +39,4 @@ class ShapeDrawingMode extends DrawingMode {
     }
 }
 
-module.exports = ShapeDrawingMode;
+export default ShapeDrawingMode;

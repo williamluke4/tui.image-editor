@@ -3,7 +3,7 @@
  * @fileoverview LineDrawingMode class
  */
 import DrawingMode from '../interface/drawingMode';
-import consts from '../consts';
+import * as consts from '../consts';
 
 const {drawingModes} = consts;
 const components = consts.componentNames;
@@ -40,4 +40,4 @@ class LineDrawingMode extends DrawingMode {
     }
 }
 
-module.exports = LineDrawingMode;
+export default LineDrawingMode;

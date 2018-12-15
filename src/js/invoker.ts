@@ -5,7 +5,7 @@
 import snippet from 'tui-code-snippet';
 import Promise from 'core-js/library/es6/promise';
 import commandFactory from './factory/command';
-import consts from './consts';
+import * as consts from './consts';
 
 const {eventNames, rejectMessages} = consts;
 const {isFunction, isString, CustomEvents} = snippet;
@@ -281,4 +281,4 @@ class Invoker {
 }
 
 CustomEvents.mixin(Invoker);
-module.exports = Invoker;
+export default Invoker;

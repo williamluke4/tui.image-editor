@@ -2,26 +2,26 @@
  * @author NHN Ent. FE Development Team <dl_javascript@nhnent.com>
  * @fileoverview Graphics module
  */
-import snippet from 'tui-code-snippet';
-import Promise from 'core-js/library/es6/promise';
-import fabric from 'fabric/dist/fabric.require';
-import ImageLoader from './component/imageLoader';
-import Cropper from './component/cropper';
-import Flip from './component/flip';
-import Rotation from './component/rotation';
-import FreeDrawing from './component/freeDrawing';
-import Line from './component/line';
-import Text from './component/text';
-import Icon from './component/icon';
-import Filter from './component/filter';
-import Shape from './component/shape';
-import CropperDrawingMode from './drawingMode/cropper';
-import FreeDrawingMode from './drawingMode/freeDrawing';
-import LineDrawingMode from './drawingMode/lineDrawing';
-import ShapeDrawingMode from './drawingMode/shape';
-import TextDrawingMode from './drawingMode/text';
-import consts from './consts';
-import util from './util';
+import snippet from "tui-code-snippet";
+import Promise from "core-js/library/es6/promise";
+import fabric from "fabric/dist/fabric.require";
+import ImageLoader from "./component/imageLoader";
+import Cropper from "./component/cropper";
+import Flip from "./component/flip";
+import Rotation from "./component/rotation";
+import FreeDrawing from "./component/freeDrawing";
+import Line from "./component/line";
+import Text from "./component/text";
+import Icon from "./component/icon";
+import Filter from "./component/filter";
+import Shape from "./component/shape";
+import CropperDrawingMode from "./drawingMode/cropper";
+import FreeDrawingMode from "./drawingMode/freeDrawing";
+import LineDrawingMode from "./drawingMode/lineDrawing";
+import ShapeDrawingMode from "./drawingMode/shape";
+import TextDrawingMode from "./drawingMode/text";
+import * as consts from "./consts";
+import * as util from "./util";
 
 const components = consts.componentNames;
 const events = consts.eventNames;
@@ -120,7 +120,7 @@ class Graphics {
          * Image name
          * @type {string}
          */
-        this.imageName = '';
+        this.imageName = "";
 
         /**
          * Object Map
@@ -286,7 +286,7 @@ class Graphics {
         const objects = [];
         const canvas = this._canvas;
         const target = this.getObject(id);
-        const isValidGroup = target && target.isType('group') && !target.isEmpty();
+        const isValidGroup = target && target.isType("group") && !target.isEmpty();
 
         if (isValidGroup) {
             canvas.discardActiveGroup(); // restore states for each objects
@@ -457,10 +457,10 @@ class Graphics {
         const maxDimension = this._calcMaxDimension(width, height);
 
         this.setCanvasCssDimension({
-            width: '100%',
-            height: '100%', // Set height '' for IE9
-            'max-width': `${maxDimension.width}px`,
-            'max-height': `${maxDimension.height}px`
+            width: "100%",
+            height: "100%", // Set height '' for IE9
+            "max-width": `${maxDimension.width}px`,
+            "max-height": `${maxDimension.height}px`
         });
 
         this.setCanvasBackstoreDimension({
@@ -553,7 +553,7 @@ class Graphics {
                 callback(image);
                 resolve(this.createObjectProperties(image));
             }, {
-                crossOrigin: 'Anonymous'
+                crossOrigin: "Anonymous"
             }
             );
         });
@@ -753,7 +753,7 @@ class Graphics {
         }
 
         const targetOrigin = targetObj.getPointByOrigin(originX, originY);
-        const centerOrigin = targetObj.getPointByOrigin('center', 'center');
+        const centerOrigin = targetObj.getPointByOrigin("center", "center");
         const diffX = centerOrigin.x - targetOrigin.x;
         const diffY = centerOrigin.y - targetOrigin.y;
 
@@ -807,13 +807,13 @@ class Graphics {
             selectedElement = document.querySelector(element);
         }
 
-        if (selectedElement.nodeName.toUpperCase() !== 'CANVAS') {
-            canvasElement = document.createElement('canvas');
+        if (selectedElement.nodeName.toUpperCase() !== "CANVAS") {
+            canvasElement = document.createElement("canvas");
             selectedElement.appendChild(canvasElement);
         }
 
         this._canvas = new fabric.Canvas(canvasElement, {
-            containerClass: 'tui-image-editor-canvas-container',
+            containerClass: "tui-image-editor-canvas-container",
             enableRetinaScaling: false
         });
     }
@@ -907,7 +907,7 @@ class Graphics {
         obj.set({
             left: centerPos.x,
             top: centerPos.y,
-            crossOrigin: 'Anonymous'
+            crossOrigin: "Anonymous"
         });
 
         this.getCanvas().add(obj).setActiveObject(obj);
@@ -920,15 +920,15 @@ class Graphics {
         const canvas = this._canvas;
         const handler = this._handler;
         canvas.on({
-            'mouse:down': handler.onMouseDown,
-            'object:added': handler.onObjectAdded,
-            'object:removed': handler.onObjectRemoved,
-            'object:moving': handler.onObjectMoved,
-            'object:scaling': handler.onObjectScaled,
-            'object:selected': handler.onObjectSelected,
-            'path:created': handler.onPathCreated,
-            'selection:cleared': handler.onSelectionCleared,
-            'selection:created': handler.onSelectionCreated
+            "mouse:down": handler.onMouseDown,
+            "object:added": handler.onObjectAdded,
+            "object:removed": handler.onObjectRemoved,
+            "object:moving": handler.onObjectMoved,
+            "object:scaling": handler.onObjectScaled,
+            "object:selected": handler.onObjectSelected,
+            "path:created": handler.onPathCreated,
+            "selection:cleared": handler.onSelectionCleared,
+            "selection:created": handler.onSelectionCreated
         });
     }
 
@@ -949,7 +949,7 @@ class Graphics {
      */
     _onObjectAdded(fEvent) {
         const obj = fEvent.target;
-        if (obj.isType('cropzone')) {
+        if (obj.isType("cropzone")) {
             return;
         }
 
@@ -1049,7 +1049,7 @@ class Graphics {
     changeSelectableAll(selectable) {
         this._canvas.forEachObject(obj => {
             obj.selectable = selectable;
-            obj.hoverCursor = selectable ? 'move' : 'crosshair';
+            obj.hoverCursor = selectable ? "move" : "crosshair";
         });
     }
 
@@ -1060,14 +1060,14 @@ class Graphics {
      */
     createObjectProperties(obj) {
         const predefinedKeys = [
-            'left',
-            'top',
-            'width',
-            'height',
-            'fill',
-            'stroke',
-            'strokeWidth',
-            'opacity'
+            "left",
+            "top",
+            "width",
+            "height",
+            "fill",
+            "stroke",
+            "strokeWidth",
+            "opacity"
         ];
         const props = {
             id: stamp(obj),
@@ -1076,7 +1076,7 @@ class Graphics {
 
         extend(props, util.getProperties(obj, predefinedKeys));
 
-        if (['i-text', 'text'].indexOf(obj.type) > -1) {
+        if (["i-text", "text"].indexOf(obj.type) > -1) {
             extend(props, this._createTextProperties(obj, props));
         }
 
@@ -1091,12 +1091,12 @@ class Graphics {
      */
     _createTextProperties(obj) {
         const predefinedKeys = [
-            'text',
-            'fontFamily',
-            'fontSize',
-            'fontStyle',
-            'textAlign',
-            'textDecoration'
+            "text",
+            "fontFamily",
+            "fontSize",
+            "fontStyle",
+            "textAlign",
+            "textDecoration"
         ];
         const props = {};
         extend(props, util.getProperties(obj, predefinedKeys));
@@ -1126,4 +1126,4 @@ class Graphics {
 }
 
 CustomEvents.mixin(Graphics);
-module.exports = Graphics;
+export default Graphics;
