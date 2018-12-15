@@ -1,6 +1,6 @@
 /*!
  * tsui-image-editor.js
- * @version 3.4.0
+ * @version 3.4.2
  * @author NHNEnt FE Development Lab <dl_javascript@nhnent.com>
  * @license MIT
  */
