@@ -1,14 +1,14 @@
 {
   "name": "tsui-image-editor",
   "author": "NHNEnt FE Development Lab <dl_javascript@nhnent.com>",
-  "version": "3.4.0",
+  "version": "3.4.1",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/nhnent/tui.image-editor.git"
   },
   "main": "dist/tui-image-editor.js",
-  "types": "types/types.d.ts",
+  "types": "dist/index.d.ts",
   "description": "TOAST UI Component: ImageEditor",
   "keywords": [
     "nhnent",
@@ -24,7 +24,7 @@
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.0",
     "@babel/preset-typescript": "^7.1.0",
-    "@types/typescript": "^2.0.0",
+    "@types/babel-core": "^6.25.5",
     "awesome-typescript-loader": "^5.2.1",
     "babel-eslint": "^10.0.1",
     "babel-loader": "8.0.4",
