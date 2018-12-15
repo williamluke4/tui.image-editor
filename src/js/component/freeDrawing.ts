@@ -14,6 +14,9 @@ import consts from '../consts';
  * @ignore
  */
 class FreeDrawing extends Component {
+	public width: any;
+	public oColor: any;
+
     constructor(graphics) {
         super(consts.componentNames.FREE_DRAWING, graphics);
 

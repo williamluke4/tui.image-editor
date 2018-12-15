@@ -16,6 +16,12 @@ const {isFunction, isString, CustomEvents} = snippet;
  * @ignore
  */
 class Invoker {
+	public _undoStack: any;
+	public _redoStack: any;
+	public _isLocked: any;
+	public fire: any;
+	public args: any;
+
     constructor() {
         /**
          * Undo stack
@@ -218,7 +224,7 @@ class Invoker {
      * @param {Command} command - command
      * @param {boolean} [isSilent] - Fire event or not
      */
-    pushUndoStack(command, isSilent) {
+    pushUndoStack(command, isSilent?) {
         this._undoStack.push(command);
         if (!isSilent) {
             this._fireUndoStackChanged();
@@ -230,7 +236,7 @@ class Invoker {
      * @param {Command} command - command
      * @param {boolean} [isSilent] - Fire event or not
      */
-    pushRedoStack(command, isSilent) {
+    pushRedoStack(command, isSilent?) {
         this._redoStack.push(command);
         if (!isSilent) {
             this._fireRedoStackChanged();

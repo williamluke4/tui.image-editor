@@ -25,6 +25,16 @@ const PICKER_COLOR = [
  * @ignore
  */
 class Colorpicker {
+	public _show: any;
+	public _colorpickerElement: any;
+	public _toggleDirection: any;
+	public _color: any;
+	public picker: any;
+	public pickerElement: any;
+	public colorElement: any;
+	public pickerControl: any;
+	public fire: any;
+
     constructor(colorpickerElement, defaultColor = '#7e7e7e', toggleDirection = 'up') {
         const title = colorpickerElement.getAttribute('title');
 

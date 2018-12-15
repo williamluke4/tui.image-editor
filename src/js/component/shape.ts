@@ -38,6 +38,14 @@ const shapeType = ['rect', 'circle', 'triangle'];
  * @ignore
  */
 class Shape extends Component {
+	public _shapeObj: any;
+	public _type: any;
+	public _options: any;
+	public _isSelected: any;
+	public _startPoint: any;
+	public _withShiftKey: any;
+	public _handlers: any;
+
     constructor(graphics) {
         super(consts.componentNames.SHAPE, graphics);
 

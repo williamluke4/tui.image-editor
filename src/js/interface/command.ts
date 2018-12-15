@@ -16,6 +16,12 @@ const errorTypes = errorMessage.types;
  * @ignore
  */
 class Command {
+	public name: any;
+	public args: any;
+	public executeCallback: any;
+	public undoCallback: any;
+	public undoData: any;
+
     constructor(actions, args) {
         /**
          * command name

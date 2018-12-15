@@ -11,6 +11,11 @@ import {defaultTextRangeValus} from '../consts';
  * @ignore
  */
 class Text extends Submenu {
+	public effect: any;
+	public align: any;
+	public _els: any;
+	public actions: any;
+
     constructor(subMenuElement, {iconStyle, menuBarPosition}) {
         super(subMenuElement, {
             name: 'text',

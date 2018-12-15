@@ -51,6 +51,29 @@ const backstoreOnly = {
  * @ignore
  */
 class Graphics {
+	public canvasImage: any;
+	public cssMaxWidth: any;
+	public cssMaxHeight: any;
+	public useItext: any;
+	public useDragAddIcon: any;
+	public cropSelectionStyle: any;
+	public imageName: any;
+	public _objects: any;
+	public _canvas: any;
+	public _drawingMode: any;
+	public _drawingModeMap: any;
+	public _componentMap: any;
+	public _handler: any;
+	public fire: any;
+	public wrapperEl: any;
+	public width: any;
+	public height: any;
+	public x: any;
+	public y: any;
+	public originX: any;
+	public originY: any;
+	public target: any;
+
     constructor(element, {
         cssMaxWidth,
         cssMaxHeight,

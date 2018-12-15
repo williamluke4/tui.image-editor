@@ -66,6 +66,7 @@
     "postinstall": "npm install --no-save --no-optional fabric@~1.6.7"
   },
   "dependencies": {
+    "@otris/jsdoc-tsd": "^1.0.4",
     "core-js": "2.4.1",
     "tui-code-snippet": "^1.5.0",
     "tui-color-picker": "^2.2.0"

@@ -12,6 +12,12 @@ const DRAW_OPACITY = 0.7;
  * @ignore
  */
 class Draw extends Submenu {
+	public _els: any;
+	public type: any;
+	public color: any;
+	public width: any;
+	public actions: any;
+
     constructor(subMenuElement, {iconStyle, menuBarPosition}) {
         super(subMenuElement, {
             name: 'draw',

@@ -17,6 +17,8 @@ const {componentNames, rejectMessages} = consts;
  * @ignore
  */
 class Flip extends Component {
+	public angle: any;
+
     constructor(graphics) {
         super(componentNames.FLIP, graphics);
     }

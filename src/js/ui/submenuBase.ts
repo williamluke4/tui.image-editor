@@ -4,6 +4,11 @@
  * @ignore
  */
 class Submenu {
+	public selector: any;
+	public menuBarPosition: any;
+	public toggleDirection: any;
+	public colorPickerControls: any;
+
     constructor(subMenuElement, {name, iconStyle, menuBarPosition, templateHtml}) {
         this.selector = str => subMenuElement.querySelector(str);
         this.menuBarPosition = menuBarPosition;

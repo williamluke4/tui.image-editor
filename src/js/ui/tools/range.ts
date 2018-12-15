@@ -7,6 +7,21 @@ import {toInteger} from '../../util';
  * @ignore
  */
 class Range {
+	public _value: any;
+	public rangeElement: any;
+	public rangeWidth: any;
+	public _min: any;
+	public _max: any;
+	public _absMax: any;
+	public realTimeEvent: any;
+	public pointer: any;
+	public subbar: any;
+	public fire: any;
+	public bar: any;
+	public firstPosition: any;
+	public firstLeft: any;
+	public dragEventHandler: any;
+
     constructor(rangeElement, options = {}) {
         this._value = options.value || 0;
         this.rangeElement = rangeElement;

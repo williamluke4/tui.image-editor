@@ -11,6 +11,9 @@
  * @ignore
  */
 class Component {
+	public name: any;
+	public graphics: any;
+
     constructor(name, graphics) {
         /**
          * Component name

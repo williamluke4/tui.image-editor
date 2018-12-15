@@ -16,6 +16,11 @@ const {eventNames} = consts;
  * @ignore
  */
 class Line extends Component {
+	public _width: any;
+	public _oColor: any;
+	public _listeners: any;
+	public _line: any;
+
     constructor(graphics) {
         super(consts.componentNames.LINE, graphics);
 

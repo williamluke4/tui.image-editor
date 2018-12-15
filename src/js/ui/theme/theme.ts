@@ -10,6 +10,8 @@ import standardTheme from './standard';
  * @ignore
  */
 class Theme {
+	public styles: any;
+
     constructor(customTheme) {
         this.styles = this._changeToObject(extend(standardTheme, customTheme));
         styleLoad(this._styleMaker());

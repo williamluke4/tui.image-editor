@@ -11,6 +11,11 @@ import {defaultIconPath} from '../consts';
  * @ignore
  */
 class Icon extends Submenu {
+	public iconType: any;
+	public _iconMap: any;
+	public _els: any;
+	public actions: any;
+
     constructor(subMenuElement, {iconStyle, menuBarPosition}) {
         super(subMenuElement, {
             name: 'icon',

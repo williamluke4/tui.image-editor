@@ -33,6 +33,10 @@ const FILTER_OPTIONS = [
  * @ignore
  */
 class Filter extends Submenu {
+	public selectBoxShow: any;
+	public checkedMap: any;
+	public _els: any;
+
     constructor(subMenuElement, {iconStyle, menuBarPosition}) {
         super(subMenuElement, {
             name: 'filter',

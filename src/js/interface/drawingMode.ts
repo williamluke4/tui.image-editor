@@ -14,6 +14,8 @@ const errorTypes = errorMessage.types;
  * @ignore
  */
 class DrawingMode {
+	public name: any;
+
     constructor(name) {
         /**
          * the name of drawing mode

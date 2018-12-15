@@ -43,6 +43,30 @@ const BI_EXPRESSION_MINSIZE_WHEN_TOP_POSITION = '1300';
  * @param {Objecdt} actions - ui action instance
  */
 class Ui {
+	public options: any;
+	public _actions: any;
+	public submenu: any;
+	public imageSize: any;
+	public uiSize: any;
+	public theme: any;
+	public _submenuChangeTransection: any;
+	public _selectedElement: any;
+	public _mainElement: any;
+	public _editorElementWrap: any;
+	public _editorElement: any;
+	public _menuElement: any;
+	public _subMenuElement: any;
+	public _initMenuEvent: any;
+	public _els: any;
+	public _editorContainerElement: any;
+	public icon: any;
+	public width: any;
+	public height: any;
+	public menuBarPosition: any;
+	public normal: any;
+	public active: any;
+	public hover: any;
+
     constructor(element, options, actions) {
         this.options = this._initializeOption(options);
 

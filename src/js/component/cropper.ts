@@ -25,6 +25,14 @@ const DEFAULT_OPTION = {
  * @ignore
  */
 class Cropper extends Component {
+	public _cropzone: any;
+	public _startX: any;
+	public _startY: any;
+	public _withShiftKey: any;
+	public _listeners: any;
+	public x: any;
+	public y: any;
+
     constructor(graphics) {
         super(componentNames.CROPPER, graphics);
 

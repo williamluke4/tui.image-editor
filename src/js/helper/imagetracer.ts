@@ -28,6 +28,12 @@
   For more information, please refer to http://unlicense.org/
 */
 export default class ImageTracer {
+	public versionnumber: any;
+	public optionpresets: any;
+	public pathscan_combined_lookup: any;
+	public gks: any;
+	public specpalette: any;
+
     static tracerDefaultOption() {
         return {
             pathomit: 100,
@@ -867,7 +873,7 @@ export default class ImageTracer {
         return btbis;
     }
 
-    roundtodec(val, places) {
+    roundtodec(val, places?) {
         return Number(val.toFixed(places));
     }
 

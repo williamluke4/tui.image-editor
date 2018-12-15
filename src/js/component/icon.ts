@@ -25,6 +25,10 @@ const pathMap = {
  * @ignore
  */
 class Icon extends Component {
+	public _oColor: any;
+	public _pathMap: any;
+	public useDragAddIcon: any;
+
     constructor(graphics) {
         super(consts.componentNames.ICON, graphics);
 

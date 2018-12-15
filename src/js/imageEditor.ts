@@ -63,6 +63,20 @@ const {isUndefined, forEach, CustomEvents} = snippet;
  * });
  */
 class ImageEditor {
+	public mode: any;
+	public activeObjectId: any;
+	public ui: any;
+	public getActions: any;
+	public _invoker: any;
+	public _graphics: any;
+	public _handlers: any;
+	public _onCreatedPath: any;
+	public setReAction: any;
+	public on: any;
+	public fire: any;
+	public UNDO_STACK_CHANGED: any;
+	public REDO_STACK_CHANGED: any;
+
     constructor(wrapper, options) {
         options = snippet.extend({
             includeUI: false,
@@ -366,7 +380,7 @@ class ImageEditor {
      *  @param {Number} originPointer.y y position
      * @private
      */
-    _onMouseDown(event, originPointer) {
+    _onMouseDown(event, originPointer?) {
         /**
          * The mouse down event with position x, y on canvas
          * @event ImageEditor#mousedown
@@ -625,7 +639,7 @@ class ImageEditor {
      *      color: 'rgba(255,0,0,0.5)'
      * });
      */
-    startDrawingMode(mode, option) {
+    startDrawingMode(mode, option?) {
         return this._graphics.startDrawingMode(mode, option);
     }
 

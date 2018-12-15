@@ -51,6 +51,18 @@ const DBCLICK_TIME = 500;
  * @ignore
  */
 class Text extends Component {
+	public _defaultStyles: any;
+	public _isSelected: any;
+	public _selectedObj: any;
+	public _editingObj: any;
+	public _listeners: any;
+	public _textarea: any;
+	public _ratio: any;
+	public _lastClickTime: any;
+	public _editingObjInfos: any;
+	public isPrevEditing: any;
+	public useItext: any;
+
     constructor(graphics) {
         super(consts.componentNames.TEXT, graphics);
 

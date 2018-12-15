@@ -29,6 +29,8 @@ filters.ColorFilter = ColorFilter;
  * @ignore
  */
 class Filter extends Component {
+	public length: any;
+
     constructor(graphics) {
         super(consts.componentNames.FILTER, graphics);
     }

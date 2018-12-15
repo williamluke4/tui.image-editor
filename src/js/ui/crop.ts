@@ -8,6 +8,11 @@ import templateHtml from './template/submenu/crop';
  * @ignore
  */
 class Crop extends Submenu {
+	public status: any;
+	public _els: any;
+	public defaultPresetButton: any;
+	public actions: any;
+
     constructor(subMenuElement, {iconStyle, menuBarPosition}) {
         super(subMenuElement, {
             name: 'crop',
