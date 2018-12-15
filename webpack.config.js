@@ -7,7 +7,7 @@ const pkg = require('./package.json');
 const webpack = require('webpack');
 const SafeUmdPlugin = require('safe-umd-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
+const path = require('path');
 const isProduction = process.argv.indexOf('-p') > -1;
 
 const FILENAME = pkg.name + (isProduction ? '.min' : '');
@@ -19,15 +19,13 @@ const BANNER = [
 ].join('\n');
 
 module.exports = {
-    eslint: {
-        failOnError: isProduction
-    },
-    entry: './src/index.js',
+    mode: isProduction ? 'production' : 'development',
+    entry: './src/index.ts',
     output: {
         library: ['tui', 'ImageEditor'],
         libraryTarget: 'umd',
-        path: 'dist',
-        publicPath: 'dist',
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: '/dist',
         filename: `${FILENAME}.js`
     },
     externals: {
@@ -44,23 +42,27 @@ module.exports = {
             'root': ['fabric']
         }
     },
+    resolve: {
+        extensions: ['.ts', '.js', '.json', '.styl']
+    },
     module: {
-        preLoaders: [
+        rules : [
             {
-                test: /\.js$/,
-                exclude: /(node_modules|bower_components)/,
-                loader: 'eslint-loader'
-            }
-        ],
-        loaders: [
+                test: /\.tsx?$/,
+                loader: 'babel-loader',
+            },
             {
-                test: /\.js$/,
-                exclude: /(node_modules|bower_components)/,
-                loader: 'babel'
+            test: /\.js$/,
+            use: ["source-map-loader"],
+            enforce: "pre"
             },
             {
                 test: /\.styl$/,
-                loader: ExtractTextPlugin.extract('css-loader?sourceMap!stylus-loader?paths=src/css/')
+                use: ExtractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: ["css-loader","stylus-loader"],
+                    publicPath: "/src/css"
+                })
             }
 
         ]
