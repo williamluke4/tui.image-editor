@@ -1112,6 +1112,7 @@ class ImageEditor {
      */
     _onAddObject(objectProps) {
         const obj = this._graphics.getObject(objectProps.id);
+        this.fire(events.ADD_OBJECT, objectProps);
         this._pushAddObjectCommand(obj);
     }
 
